@@ -1,40 +1,62 @@
 <div class="pet-list">
-  <h1 class="pet-list__title">Adote Agora</h1>
-  <p class="pet-list__description">
-    Temos vários peludinhos esperando para fazer um lar mais feliz!
-  </p>
-  <img src="assets/AdoptDog2x.png" alt="">
+  <div class="pet-list__section1">
+    <div>
+      <h1 class="pet-list__title">Adote Agora</h1>
+      <p class="pet-list__description">
+        Temos vários peludinhos esperando para fazer um lar mais feliz!
+      </p>
+    </div>
+    <div>
+      <img src="assets/AdoptDog2x.png" alt="cachorro fofinho" class="pet-list__image" />
+    </div>
+  </div>
+
   <div class="pet-list__grid">
     <div class="pet-card" *ngFor="let pet of pets">
-      <img [src]="pet.img" alt="{{ pet.name }}">
+      <img [src]="pet.img" alt="{{ pet.name }}" />
       <h3>{{ pet.name }}</h3>
       <p>{{ pet.type }}, {{ pet.gender }}</p>
-      <button (click)="favoriteImage()"><span><img src="assets/GrayHeart2x.png" alt="coração de favoritar"></span></button>
-      <button class="btn-adopt" (click)="adoptPet()">Adote agora</button>
+      <div class="pet-list__button-group">
+        <button class="pet-list__button-group-fav" (click)="favoriteImage(pet)">
+          <span>
+            <img
+              [src]="pet.isFavorite ? 'assets/Heart2x.png' : 'assets/GrayHeart2x.png'"
+              class="pet-list__button-group-fav__heart"
+              alt="coração de favoritar"
+            />
+          </span>
+        </button>
+        <button class="btn-adopt" (click)="adoptPet()">Adote agora</button>
+      </div>
     </div>
   </div>
 </div>
 
- <!-- Modal de agradecimento -->
- <div class="modal" *ngIf="showModalAdopt">
+<!-- Modais -->
+<div class="modal" *ngIf="showModal" [ngClass]="{'modal--adopt': modalType === 'adopt', 'modal--favorite': modalType === 'favorite'}">
   <div class="modal-content">
-    <span class="close" (click)="closeModalAdopt()">
-      <img src="assets/Close2x.png" alt="botao fechar">
+    <span class="close" (click)="closeModal()">
+      <img src="assets/Close2x.png" class="close__icon" alt="botao fechar" />
     </span>
-    <img src="assets/girl holding a dog in hands.png" alt="menina segurando cachorro">
-    <h2>VOCE GANHOU UM NOVO AMIGUINHO!</h2>
-    <p>Obrigado por sua adoção, ficamos felizes por você e por ele(a)!</p>
-  </div>
-</div>
 
- <!-- Modal de favoritar -->
- <div class="modal" *ngIf="showModalFavorite">
-  <div class="modal-content">
-    <span class="close" (click)="closeModalFavorite()">
-      <img src="assets/Close2x.png" alt="botao fechar">
-    </span>
-    <img src="assets/Man sitting with dog and a cup of coffee.png" alt="rapaz alimentando cachorro">
-    <h2>FAVORITADO COM AMOR!</h2>
-    <p>Obrigado por seu interesse em nossos amigos! Esperamos ansiosos pela sua adoção!</p>
+    <!-- Conteúdo da modal -->
+    <ng-container *ngIf="modalType === 'adopt'">
+      <div>
+        <img src="assets/girl holding a dog in hands.png" alt="menina segurando cachorro" />
+      </div>
+      <div>
+        <h2>VOCÊ GANHOU UM NOVO AMIGUINHO!</h2>
+        <p>Obrigado por sua adoção, ficamos felizes por você e por ele(a)!</p>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="modalType === 'favorite'">
+      <div>
+        <img src="assets/Man sitting with dog and a cup of coffee.png" alt="rapaz alimentando cachorro" />
+      </div>
+      <div>
+        <h2>FAVORITADO COM AMOR!</h2>
+        <p>Obrigado por seu interesse em nossos amigos! Esperamos ansiosos pela sua adoção!</p>
+      </div>
+    </ng-container>
   </div>
-</div>
