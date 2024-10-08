@@ -2,7 +2,7 @@
   padding: 20px
   margin-left: 254px
 
-  /* Media Query para tablets */
+  /* tablets */
   @media (max-width: 768px)
     margin-left: 0
 
@@ -45,6 +45,7 @@
       row-gap: 30px
       margin: 0
       padding: 0
+      margin-left: 30px
 
   &__image
     width: 732px
@@ -143,29 +144,65 @@
   width: 589px
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2)
   position: relative
-  border: 10px, solid, #ffffff
+  border: 10px solid #ffffff
   display: flex
 
   h2
     font-size: 48px
     font-family: "Amatic SC", sans-serif
-    width: 176px
-    height: 191px
     font-weight: 700
-    line-height: 50.53px
-    text-align: justify
-    margin-top: 39px
-    margin-right: 164px
+    line-height: 1.2
+    margin-top: 10px
+    margin-bottom: 10px
+    width: auto
+    text-align: center
 
   p
     font-size: 26px
     font-family: "Nunito", sans-serif
-    width: 276px
+    text-align: center
+    margin: 10px 0
 
-  &___img-congratz
-    position: relative
-    left: 69px
-    top: 33px
+  @media (max-width: 480px)
+    width: 300px
+    padding: 15px
+
+    .modal-content__congratz
+      h2
+        font-size: 24px
+
+      p
+        font-size: 14px
+
+    img
+      width: 100px
+      max-height: 150px
+      margin-bottom: 15px
+      border-radius: 10px
+
+    .close
+      img
+        width: 14px
+        height: 14px
+        margin-right: 0
+        margin-top: 20px
+
+
+  h2
+    font-size: 48px
+    font-family: "Amatic SC", sans-serif
+    font-weight: 700
+    line-height: 1.2
+    margin-top: 10px
+    margin-bottom: 10px
+    width: auto
+    text-align: center
+
+  p
+    font-size: 26px
+    font-family: "Nunito", sans-serif
+    text-align: center
+    margin: 10px 0
 
   .close
     position: absolute
@@ -180,10 +217,11 @@
       margin-top: 20px
 
   &__congratz
-    margin-left: 72px
-
-    .congratz-favorite
-      height: 90px
+    display: flex
+    flex-direction: column
+    align-items: center
+    text-align: center
+    margin: 10px 0
 
 .modal--adopt .modal-content
   background-color: #91D88B

@@ -7,7 +7,11 @@
       </p>
     </div>
     <div>
-      <img src="assets/AdoptDog2x.png" alt="cachorro fofinho" class="pet-list__image" />
+      <img
+        src="assets/AdoptDog2x.png"
+        alt="cachorro fofinho"
+        class="pet-list__image"
+      />
     </div>
   </div>
 
@@ -20,7 +24,9 @@
         <button class="pet-list__button-group-fav" (click)="favoriteImage(pet)">
           <span>
             <img
-              [src]="pet.isFavorite ? 'assets/Heart2x.png' : 'assets/GrayHeart2x.png'"
+              [src]="
+                pet.isFavorite ? 'assets/Heart2x.png' : 'assets/GrayHeart2x.png'
+              "
               class="pet-list__button-group-fav__heart"
               alt="coração de favoritar"
             />
@@ -33,7 +39,14 @@
 </div>
 
 <!-- Modais -->
-<div class="modal" *ngIf="showModal" [ngClass]="{'modal--adopt': modalType === 'adopt', 'modal--favorite': modalType === 'favorite'}">
+<div
+  class="modal"
+  *ngIf="showModal"
+  [ngClass]="{
+    'modal--adopt': modalType === 'adopt',
+    'modal--favorite': modalType === 'favorite'
+  }"
+>
   <div class="modal-content">
     <span class="close" (click)="closeModal()">
       <img src="assets/Close2x.png" class="close__icon" alt="botao fechar" />
@@ -41,7 +54,11 @@
 
     <ng-container *ngIf="modalType === 'adopt'">
       <div>
-        <img src="assets/girl holding a dog in hands.png" class="modal-content___img-congratz" alt="menina segurando cachorro" />
+        <img
+          src="assets/girl holding a dog in hands.png"
+          class="modal-content___img-congratz"
+          alt="menina segurando cachorro"
+        />
       </div>
       <div class="modal-content__congratz">
         <h2>VOCÊ GANHOU UM NOVO AMIGUINHO!</h2>
@@ -51,11 +68,19 @@
 
     <ng-container *ngIf="modalType === 'favorite'">
       <div>
-        <img src="assets/Man sitting with dog and a cup of coffee.png" class="modal-content___img-congratz" alt="rapaz alimentando cachorro" />
+        <img
+          src="assets/Man sitting with dog and a cup of coffee.png"
+          class="modal-content___img-congratz"
+          alt="rapaz alimentando cachorro"
+        />
       </div>
       <div class="modal-content__congratz">
         <h2 class="congratz-favorite">FAVORITADO COM AMOR!</h2>
-        <p>Obrigado por seu interesse em nossos amigos! Esperamos ansiosos pela sua adoção!</p>
+        <p>
+          Obrigado por seu interesse em nossos amigos! Esperamos ansiosos pela
+          sua adoção!
+        </p>
       </div>
     </ng-container>
   </div>
+</div>
