@@ -9,6 +9,7 @@
     background-color: #ECD48B
     margin: 0
     height: 270px
+    padding: 20px
 
   &__logo
     margin-left: 201px
@@ -16,6 +17,7 @@
 
     p
       margin: 0
+
     .footer__logo-img
       width: 332px
       height: 111px
@@ -37,11 +39,78 @@
     margin: 0
     display: flex
     align-items: center
-
+    justify-content: center
 
     p
       font-size: 20px
       margin: 0
+
     .footer__copyright-direitos
       margin-left: 201px
       margin-right: 420px
+
+  /* tablets */
+  @media (max-width: 768px)
+
+
+    &__content
+      flex-direction: column
+      align-items: center
+      height: auto
+      padding: 15px
+
+    &__logo
+      margin-left: 0
+      margin-right: 0
+      margin-bottom: 15px
+
+      .footer__logo-img
+        width: 250px
+        height: auto
+
+    &__info
+      width: 100%
+      height: auto
+      text-align: center
+      margin-bottom: 15px
+
+      h3
+        font-size: 22px
+
+      p
+        font-size: 16px
+
+    &__copyright
+      p
+        font-size: 12px
+      justify-content: center
+
+    .footer__copyright-direitos
+      margin-left: 21px
+      margin-right: 298px
+
+  /* mobile */
+  @media (max-width: 480px)
+    &__content
+      padding: 10px
+
+    &__logo
+      .footer__logo-img
+        width: 180px
+        height: auto
+
+    &__info
+      width: 100%
+      height: auto
+      text-align: center
+
+      h3
+        font-size: 20px
+
+      p
+        font-size: 14px
+
+    &__copyright
+      p
+        font-size: 14px
+      justify-content: center

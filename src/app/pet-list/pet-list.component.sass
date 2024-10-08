@@ -2,9 +2,15 @@
   padding: 20px
   margin-left: 254px
 
+  /* Media Query para tablets */
+  @media (max-width: 768px)
+    margin-left: 0
+
   &__section1
     display: flex
     justify-content: center
+    flex-wrap: wrap
+    text-align: center
 
   &__title
     font-family: "Amatic SC", sans-serif
@@ -13,6 +19,7 @@
   &__description
     font-family: "Nunito", sans-serif
     font-size: 18px
+    margin: 10px 0
 
   &__grid
     display: grid
@@ -27,11 +34,17 @@
     @media (max-width: 768px)
       grid-template-columns: repeat(2, 1fr)
       column-gap: 40px
+      row-gap: 50px
+      margin: 0
+      padding: 0
 
     // Responsividade para celulares
     @media (max-width: 480px)
       grid-template-columns: 1fr
       column-gap: 20px
+      row-gap: 30px
+      margin: 0
+      padding: 0
 
   &__image
     width: 732px

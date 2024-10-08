@@ -11,6 +11,7 @@ $text-color: #3d3d3d
   background-color: $secondary-color
   padding: 20px
   display: flex
+  align-items: center
 
   &__banner
     width: 222px
@@ -19,13 +20,15 @@ $text-color: #3d3d3d
 
   &__logo
     +flex-center
+    margin-left: 200px
+
     .header__logo-img
       height: 50px
       margin-right: 10px
-    margin-left: 200px
 
   &__nav
     +flex-center
+
     .header__link
       color: $text-color
       text-decoration: none
@@ -36,4 +39,43 @@ $text-color: #3d3d3d
       &:hover
         color: $primary-color
 
+  /* tablets */
+  @media (max-width: 768px)
+    flex-direction: column
+    padding: 15px
+    width: 100%
 
+    &__banner
+      width: 180px
+      height: auto
+      margin-bottom: 10px
+
+    &__logo
+      margin-left: 0
+      margin-bottom: 10px
+
+      .header__logo-img
+        height: 40px
+
+    &__nav
+      .header__link
+        font-size: 28px
+        margin-left: 20px
+
+  /* mobile */
+  @media (max-width: 480px)
+    padding: 10px
+    width: 100%
+
+    &__banner
+      width: 150px
+      height: auto
+
+    &__logo
+      .header__logo-img
+        height: 35px
+
+    &__nav
+      .header__link
+        font-size: 24px
+        margin-left: 10px
